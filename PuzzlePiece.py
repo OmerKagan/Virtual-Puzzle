@@ -1,5 +1,6 @@
 import cv2
 
+
 class PuzzlePiece():
     def __init__(self, path, posOrigin, imgType, resizeRatio):
         self.path = path
@@ -12,11 +13,11 @@ class PuzzlePiece():
             self.img = cv2.imread(self.path)
 
         self.img = cv2.resize(self.img, (0, 0), None, resizeRatio, resizeRatio)
-        self.size = self.img.shape[:2]
+        self.size = self.img.shape[:2]  # height, width
 
-        self.stickingPoints = []#[(x1, y1), (x2, y2)]
+        self.stickingPoints = []  # [(x1, y1), (x2, y2)]
 
-    #Methods
+    # Methods
     def update(self, cursor):  # cursor represents the tip of the index finger in this project
         ox, oy = self.posOrigin
         h, w = self.size

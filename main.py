@@ -10,7 +10,7 @@ import math
 cameraNo = 0
 wCam = 1280
 hCam = 720
-path = "Cars/McQueen"
+path = "Cars/Mater"
 #########################
 
 # Methods
@@ -104,15 +104,15 @@ while True:
             x = listImg[0].posOrigin[0]
             y = listImg[0].posOrigin[1] + h
             listImg[2].setPositionOrigin((x, y))
-        if math.dist(stickingPoints[1][1], stickingPoints[3][1]) < 15:
-            h, w = listImg[1].getSize()
-            x = listImg[1].posOrigin[0]
-            y = listImg[1].posOrigin[1] + h
-            listImg[3].setPositionOrigin((x, y))
         if math.dist(stickingPoints[2][0], stickingPoints[3][0]) < 15:
             h, w = listImg[2].getSize()
             x = listImg[2].posOrigin[0] + w
             y = listImg[2].posOrigin[1]
+            listImg[3].setPositionOrigin((x, y))
+        if math.dist(stickingPoints[1][1], stickingPoints[3][1]) < 15:
+            h, w = listImg[1].getSize()
+            x = listImg[1].posOrigin[0]
+            y = listImg[1].posOrigin[1] + h
             listImg[3].setPositionOrigin((x, y))
 
     try:
